@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: var(--font-space-grotesk);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+  background-color: #030303;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #404040;
+}
+
+/* Subtle glowing background mesh */
+.glow-mesh {
+  background: radial-gradient(circle at 50% 0%, rgba(120, 119, 198, 0.15), transparent 60%),
+              radial-gradient(circle at 80% 10%, rgba(70, 100, 255, 0.08), transparent 50%);
+}
+
+/* Glass card effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Text gradient */
+.text-gradient {
+  background: linear-gradient(to right, #ffffff, #a5a5a5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-primary {
+  background: linear-gradient(135deg, #fff 30%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shooting Stars Animation */
+.stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.shooting-star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 1px;
+  background: linear-gradient(45deg, rgba(99, 102, 241, 1), rgba(0, 0, 255, 0));
+  filter: drop-shadow(0 0 6px rgba(99, 102, 241, 0.8));
+  opacity: 0;
+  animation: shooting-star-animation ease-in-out infinite;
+}
+
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  height: 2px;
+  width: 2px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px rgba(99, 102, 241, 0.5);
+}
+
+@keyframes shooting-star-animation {
+  0% {
+    transform: translateX(0) translateY(0) rotate(45deg);
+    opacity: 1;
+    width: 0;
+  }
+  20% {
+    width: 200px;
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(600px) translateY(600px) rotate(45deg);
+    opacity: 0;
+    width: 0;
+  }
+}
+
+:root {
+  --radius: 0.5rem;
+  /* Dark background matching your project */
+  --background: 10 10 20; /* #0A0A14 */
+  --foreground: 255 255 255; /* white */
+
+  /* Cards with glass effect */
+  --card: 15 15 25; /* darker background */
+  --card-foreground: 255 255 255;
+
+  /* Popovers */
+  --popover: 10 10 20;
+  --popover-foreground: 255 255 255;
+
+  /* Primary - Indigo accent */
+  --primary: 99 102 241; /* indigo-500 */
+  --primary-foreground: 255 255 255;
+
+  /* Secondary */
+  --secondary: 38 38 38; /* neutral-800 */
+  --secondary-foreground: 255 255 255;
+
+  /* Muted */
+  --muted: 38 38 38; /* neutral-800 */
+  --muted-foreground: 163 163 163; /* neutral-400 */
+
+  /* Accent - Indigo */
+  --accent: 99 102 241; /* indigo-500 */
+  --accent-foreground: 255 255 255;
+
+  /* Destructive */
+  --destructive: 239 68 68; /* red-500 */
+  --destructive-foreground: 255 255 255;
+
+  /* Border and input */
+  --border: 255 255 255 / 0.1; /* white/10 */
+  --input: 255 255 255 / 0.1;
+  --ring: 99 102 241; /* indigo-500 */
+
+  /* Charts */
+  --chart-1: 99 102 241; /* indigo */
+  --chart-2: 16 185 129; /* emerald */
+  --chart-3: 59 130 246; /* blue */
+  --chart-4: 168 85 247; /* purple */
+  --chart-5: 251 146 60; /* orange */
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
