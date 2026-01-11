@@ -1,6 +1,6 @@
 'use client'
 
-import { CheckCircle, AlertCircle, XCircle, Clock, Loader2, TrendingUp } from 'lucide-react'
+import { Clock, Loader2, TrendingUp } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import {
@@ -9,6 +9,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 interface Service {
   name: string
@@ -117,6 +119,8 @@ export default function Status() {
   }
 
   return (
+    <>
+    <Navbar />
     <div className="min-h-screen bg-[#0A0A14]">
       {/* Main Content */}
       <div className="pt-32 pb-20 px-6">
@@ -317,5 +321,7 @@ export default function Status() {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   )
 }
