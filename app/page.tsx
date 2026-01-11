@@ -670,10 +670,16 @@ export default function Home() {
                 <p className="text-neutral-400 font-light leading-relaxed mb-6">
                   $STYX leverages Solana&apos;s high-speed, low-cost infrastructure to provide instant rewards and seamless token utility across the StyxPay ecosystem.
                 </p>
-                <Link href="https://docs.styxpay.app" className="inline-flex items-center gap-2 px-6 py-2.5 bg-indigo-500 text-white rounded-lg font-medium text-sm hover:bg-indigo-600 transition-colors group">
-                  <span>Learn More</span>
+                <div className="flex gap-4">
+
+                <Link href="https://pump.fun/coin/" className="inline-flex items-center gap-2 px-6 py-2.5 bg-indigo-500 text-white rounded-lg font-medium text-sm hover:bg-indigo-600 transition-colors group">
+                  <span>Buy $STYX</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
+                 <Link href="https://docs.styxpay.app" className="w-full sm:w-auto px-8 py-3.5 glass-card text-white rounded-lg font-medium text-sm hover:bg-white/5 transition-all flex items-center justify-center gap-2.5">
+              <span>Learn more</span>
+            </Link>
+                </div>
               </div>
               <div className="flex items-center justify-center">
                   <Image src="/card.png" width={400} height={400} alt="StyxPay card" className='-rotate-10' />
