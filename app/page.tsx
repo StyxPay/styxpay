@@ -672,7 +672,7 @@ export default function Home() {
                 </p>
                 <div className="flex gap-4">
 
-                <Link href="https://pump.fun/coin/" className="inline-flex items-center gap-2 px-6 py-2.5 bg-indigo-500 text-white rounded-lg font-medium text-sm hover:bg-indigo-600 transition-colors group">
+                <Link href="https://pump.fun/coin/Gv7h27obb99tvjvUGknUjb1VCoa9oZVdZRuouHabpump" className="inline-flex items-center gap-2 px-6 py-2.5 bg-indigo-500 text-white rounded-lg font-medium text-sm hover:bg-indigo-600 transition-colors group">
                   <span>Buy $STYX</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
